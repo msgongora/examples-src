@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<folder name="CUADRO DE CLASIFICACION UNIVERSIDAD DE LAS CIENCIAS INFORMATICAS (UCI)" >
+	<folders>
+		<folder name="DOCUMENTOS DE GESTIÓN DE LAS ACTIVIDADES ADMINISTRATIVAS" >
+			<folders>
+				<folder name="ORGANIZACIÓN Y GESTIÓN ADMINISTRATIVA" id="1000" type="function" >
+					<folders>
+						<folder name="DOCUMENTOS CONSTITUTIVOS" id="1001" type="subfuction" >
+							<folders>
+								<folder name="Resoluciones" id="S.1" type="serie" >
+									<contents>
+										<content name="{gda.contents.resoluciones}resolucion" />
+										<content name="{gda.contents.actasRectodia}acta" />
+									</contents>
+									<entities>
+										<entity id="987-234-345-212" />
+									</entities>								
+								</folder>
+							</folders>					
+						</folder>
+						<folder name="" id="1002" type="subfuction" />
+						<folder name="" id="1006" type="subfuction" />
+						<folder name="" id="1007" type="subfuction" />					
+					</folders>
+				</folder>
+				<folder name="GESTIÓN DE LA INFORMACIÓN" id="1010" type="function" />
+				<folder name="GESTIÓN DE LAS COMUNICACIONES" id="1023" type="function" />
+				<folder name="REPRESENTACIÓN Y RELACIONES PÚBLICAS" id="1037" type="function" />
+				<folder name="RELACIONES EXTERIORES" id="1049" type="function" />
+				<folder name="GESTIÓN DE RECURSOS HUMANOS" id="1065" type="function" />
+				<folder name="GESTIÓN DE RECURSOS ECONÓMICOS" id="1071" type="function" />
+				<folder name="GESTIÓN DE RECURSOS MATERIALES" id="1081" type="function" />
+				<folder name="GESTIÓN DE RECURSOS INMOBILIARIOS" id="1088" type="function" />
+				<folder name="NORMATIVA Y ASUNTOS JURÍDICOS" id="1197" type="function" />
+			</folders>	
+		</folder>
+		<folder name="DOCUMENTOS DE GESTIÓN DE LAS ACTIVIDADES ESPECÍFICAS">
+			<folders>				
+				<folder name="GESTIÓN DE RECURSOS ACADÉMICOS" id="2000" type="function" />
+				<folder name="ORGANIZACIÓN DE LA DIRECCIÓN ESTUDIANTIL" id="2008" type="function" />
+				<folder name="GESTIÓN DE SERVICIOS DE EXTENSIÓN UNIVERSITARIA" id="2019" type="function" />
+				<folder name="ORGANIZACIÓN DE LA DOCENCIA" id="2046" type="function" />
+				<folder name="ORGANIZACIÓN DE LA INVESTIGACIÓN" id="2056" type="function" />
+				<folder name="GESTIÓN DE LA PRODUCCIÓN" id="2068" type="function" />
+				<folder name="ORGANIZACIÓN DE LA RESIDENCIA" id="2080" type="function" />
+				<folder name="GESTIÓN Y ORGANIZACIÓN DE LA SEGURIDAD Y PROTECCIÓN" id="2096" type="function" />
+				<folder name="GESTIÓN DE ESTRATEGIA Y CALIDAD" id="2110" type="function" />
+				<folder name="ORGANIZACIÓN DE LOS IPI" id="2120" type="function" />
+			</folders>	
+		</folder>		
+	</folders>
+</folder>
+
+

@@ -1,0 +1,330 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from RecordsManagementService WSDL service -->
+
+  <service name="RecordsManagementService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      <parameter name="wsdlServiceElement" value="RecordsManagementService"/>
+      <parameter name="schemaQualified" value="http://www.alfresco.org/ws/model/content/1.0,http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      <parameter name="wsdlServicePort" value="RecordsManagementService"/>
+      <parameter name="className" value="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="RecordsManagementServiceSoapPort"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="createEntities" qname="operNS:createEntities" xmlns:operNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" soapAction="http://www.eXcriba.org/ws/service/recordsmanagement/1.0/createEntities" >
+        <parameter qname="pns:patentEntity" xmlns:pns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:entities" xmlns:pns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" type="tns:TreeEntity" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+        <fault name="RecordsManagementFault" qname="fns:RecordsManagementFault" xmlns:fns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" class="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault" type="tns:RecordsManagementFault" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      </operation>
+      <operation name="deleteEntities" qname="operNS:deleteEntities" xmlns:operNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" soapAction="http://www.eXcriba.org/ws/service/recordsmanagement/1.0/deleteEntities" >
+        <parameter qname="pns:entities" xmlns:pns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="RecordsManagementFault" qname="fns:RecordsManagementFault" xmlns:fns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" class="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault" type="tns:RecordsManagementFault" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      </operation>
+      <operation name="addChildEntities" qname="operNS:addChildEntities" xmlns:operNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" soapAction="http://www.eXcriba.org/ws/service/recordsmanagement/1.0/addChildEntities" >
+        <parameter qname="pns:parentEntity" xmlns:pns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:entities" xmlns:pns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="RecordsManagementFault" qname="fns:RecordsManagementFault" xmlns:fns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" class="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault" type="tns:RecordsManagementFault" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      </operation>
+      <operation name="removeChildEntities" qname="operNS:removeChildEntities" xmlns:operNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" soapAction="http://www.eXcriba.org/ws/service/recordsmanagement/1.0/removeChildEntities" >
+        <parameter qname="pns:parentEntity" xmlns:pns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:entities" xmlns:pns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="RecordsManagementFault" qname="fns:RecordsManagementFault" xmlns:fns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" class="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault" type="tns:RecordsManagementFault" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      </operation>
+      <operation name="getAllEntities" qname="operNS:getAllEntities" xmlns:operNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" returnQName="retNS:results" xmlns:retNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" returnType="rtns:TreeEntity" xmlns:rtns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" soapAction="http://www.eXcriba.org/ws/service/recordsmanagement/1.0/getAllEntities" >
+        <fault name="RecordsManagementFault" qname="fns:RecordsManagementFault" xmlns:fns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" class="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault" type="tns:RecordsManagementFault" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      </operation>
+      <operation name="ccSynchronization" qname="operNS:ccSynchronization" xmlns:operNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" soapAction="http://www.eXcriba.org/ws/service/recordsmanagement/1.0/ccSynchronization" >
+        <parameter qname="pns:cclassification" xmlns:pns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" type="tns:TreeFolder" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+        <fault name="RecordsManagementFault" qname="fns:RecordsManagementFault" xmlns:fns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" class="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault" type="tns:RecordsManagementFault" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      </operation>
+      <operation name="getCCTemplates" qname="operNS:getCCTemplates" xmlns:operNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" returnQName="retNS:templates" xmlns:retNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" returnType="rtns:TreeFolder" xmlns:rtns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" soapAction="http://www.eXcriba.org/ws/service/recordsmanagement/1.0/getCCTemplates" >
+        <fault name="RecordsManagementFault" qname="fns:RecordsManagementFault" xmlns:fns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" class="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault" type="tns:RecordsManagementFault" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      </operation>
+      <operation name="getCClassification" qname="operNS:getCClassification" xmlns:operNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" returnQName="retNS:cclassification" xmlns:retNS="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" returnType="rtns:TreeFolder" xmlns:rtns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" soapAction="http://www.eXcriba.org/ws/service/recordsmanagement/1.0/getCClassification" >
+        <fault name="RecordsManagementFault" qname="fns:RecordsManagementFault" xmlns:fns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0" class="org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault" type="tns:RecordsManagementFault" xmlns:tns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"/>
+      </operation>
+      <parameter name="allowedMethods" value="addChildEntities getCClassification getAllEntities ccSynchronization createEntities removeChildEntities deleteEntities getCCTemplates"/>
+
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:ResultSetMetaData"
+        type="java:org.alfresco.repo.webservice.types.ResultSetMetaData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"
+        qname="ns:EntityFilter"
+        type="java:org.eXcriba.repo.webservice.recordsmanagement.EntityFilter"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Query"
+        type="java:org.alfresco.repo.webservice.types.Query"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Store"
+        type="java:org.alfresco.repo.webservice.types.Store"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Category"
+        type="java:org.alfresco.repo.webservice.types.Category"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:NamedValue"
+        type="java:org.alfresco.repo.webservice.types.NamedValue"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"
+        qname="ns:TreeFolder"
+        type="java:org.eXcriba.repo.webservice.recordsmanagement.TreeFolder"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:NodeDefinition"
+        type="java:org.alfresco.repo.webservice.types.NodeDefinition"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Name"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"
+        qname="ns:TreeEntity"
+        type="java:org.eXcriba.repo.webservice.recordsmanagement.TreeEntity"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:ValueDefinition"
+        type="java:org.alfresco.repo.webservice.types.ValueDefinition"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:>ResultSetRow>node"
+        type="java:org.alfresco.repo.webservice.types.ResultSetRowNode"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:RoleDefinition"
+        type="java:org.alfresco.repo.webservice.types.RoleDefinition"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:PropertyDefinition"
+        type="java:org.alfresco.repo.webservice.types.PropertyDefinition"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"
+        qname="ns:CCEntity"
+        type="java:org.eXcriba.repo.webservice.recordsmanagement.CCEntity"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:VersionHistory"
+        type="java:org.alfresco.repo.webservice.types.VersionHistory"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:ParentReference"
+        type="java:org.alfresco.repo.webservice.types.ParentReference"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Cardinality"
+        type="java:org.alfresco.repo.webservice.types.Cardinality"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Classification"
+        type="java:org.alfresco.repo.webservice.types.Classification"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:AssociationDefinition"
+        type="java:org.alfresco.repo.webservice.types.AssociationDefinition"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Version"
+        type="java:org.alfresco.repo.webservice.types.Version"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:ContentFormat"
+        type="java:org.alfresco.repo.webservice.types.ContentFormat"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:>ContentFormat>mimetype"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:ResultSet"
+        type="java:org.alfresco.repo.webservice.types.ResultSet"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:UUID"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Path"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"
+        qname="ns:RecordsManagementFault"
+        type="java:org.eXcriba.repo.webservice.recordsmanagement.RecordsManagementFault"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Node"
+        type="java:org.alfresco.repo.webservice.types.Node"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Reference"
+        type="java:org.alfresco.repo.webservice.types.Reference"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:Predicate"
+        type="java:org.alfresco.repo.webservice.types.Predicate"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.eXcriba.org/ws/service/recordsmanagement/1.0"
+        qname="ns:Base"
+        type="java:org.eXcriba.repo.webservice.recordsmanagement.Base"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:ResultSetRow"
+        type="java:org.alfresco.repo.webservice.types.ResultSetRow"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:ClassDefinition"
+        type="java:org.alfresco.repo.webservice.types.ClassDefinition"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.alfresco.org/ws/model/content/1.0"
+        qname="ns:>ContentFormat>encoding"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

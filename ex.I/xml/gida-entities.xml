@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<entity name="UCI">
+	<entities>
+		<entity name="Dirección de Informatización">
+			<entities>
+				<entity name="Dirección 1"/>
+				<entity name="Dirección 2"/>
+				<entity name="Dirección 3"/>
+			</entities>
+		</entity>	
+		<entity name="Dirección de Alimentación" />
+		<entity name="Consejo Docente"/>
+		<entity name="Consejo Universitario"/>
+		<entity name="Dirección de Investigación"/>
+	</entities>
+</entity>
+		
+	
