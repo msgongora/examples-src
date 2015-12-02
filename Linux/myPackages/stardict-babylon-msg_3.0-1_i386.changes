@@ -1,0 +1,36 @@
+Format: 1.8
+Date: Tue,  5 Jun 2007 22:23:01 -0400
+Source: stardict-babylon-msg
+Binary: stardict-english-spanish-msg stardict-english-english-msg stardict-spanish-english-msg
+Architecture: source i386
+Version: 3.0-1
+Distribution: unstable
+Urgency: low
+Maintainer: Marcel Sanchez Gongora <mrsanchez@uci.cu>
+Changed-By: Marcel Sanchez Gongora <mrsanchez@uci.cu>
+Description: 
+ stardict-english-english-msg - English-English Babylon dictionary for StarDict
+ stardict-english-spanish-msg - English-Spanish Babylon dictionary for StarDict
+ stardict-spanish-english-msg - Spanish-English Babylon dictionary for StarDict
+Changes: 
+ stardict-babylon-msg (3.0-1) unstable; urgency=low
+ .
+   * Initial release.
+Checksums-Sha1: 
+ f6edc3423e616b1fa32bb55a0f00ac50c5b0ad2a 595 stardict-babylon-msg_3.0-1.dsc
+ fc3b6d3bf4cfcaae8aedb9dc983e3d3294479df2 9491166 stardict-babylon-msg_3.0-1.tar.gz
+ 5b36293e7aa3aaff9e16eea3cbd08c0374272837 3462952 stardict-english-spanish-msg_3.0-1_i386.deb
+ 9b2ba2a434e6a0291d8254b8a7a393a4fe47ee02 4162018 stardict-english-english-msg_3.0-1_i386.deb
+ 8013e34e48ef5097e5c2afe42d590c3273ef26c2 1812756 stardict-spanish-english-msg_3.0-1_i386.deb
+Checksums-Sha256: 
+ 9c52feb712d4c7131822f1d290c564822ee531101e17a98fbc4440dd12c7de67 595 stardict-babylon-msg_3.0-1.dsc
+ 6adffda239223152e0624422f8bdb263bb8ce42de93443aeb5ea1c9fb24f203c 9491166 stardict-babylon-msg_3.0-1.tar.gz
+ e56b835f75b02c97558a505e2b43fd3cff855e8015862a53c0a5504568ac2e6e 3462952 stardict-english-spanish-msg_3.0-1_i386.deb
+ f2e4c7d12d2afdf9d6af7bab56b714fc20a92c4fdf286a810abd6a85c6c27f91 4162018 stardict-english-english-msg_3.0-1_i386.deb
+ dbb02fa3fe55c6f984d79afa5a27683a00f18e8efb123635fa1abfc9bf5fd138 1812756 stardict-spanish-english-msg_3.0-1_i386.deb
+Files: 
+ 6d7a35ba4dbc8f8dac793edd982f8fd9 595 utils optional stardict-babylon-msg_3.0-1.dsc
+ b213d75ba617da0025a354c06b84e906 9491166 utils optional stardict-babylon-msg_3.0-1.tar.gz
+ e35b089ca9a8e0beb62d1a9184dbb84f 3462952 utils optional stardict-english-spanish-msg_3.0-1_i386.deb
+ 64a39b18935ba37a8da269106d48614b 4162018 utils optional stardict-english-english-msg_3.0-1_i386.deb
+ 7a63177ce3f65e8711d1c2e3b1968ee1 1812756 utils optional stardict-spanish-english-msg_3.0-1_i386.deb

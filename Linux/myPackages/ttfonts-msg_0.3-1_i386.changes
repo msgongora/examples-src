@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Fri, 07 May 2010 10:36:44 -0400
+Source: ttfonts-msg
+Binary: ttfonts-msg
+Architecture: source i386
+Version: 0.3-1
+Distribution: unstable
+Urgency: low
+Maintainer: Marcel Sanchez Gongora <msgongora@gmail.com>
+Changed-By: Marcel Sanchez Gongora <mrsanchez@uci.cu>
+Description: 
+ ttfonts-msg - Free TrueType fonts
+Changes: 
+ ttfonts-msg (0.3-1) unstable; urgency=low
+ .
+   * Non-maintainer upload.
+Checksums-Sha1: 
+ 10a1592840508cc44ddd1aa94cd388672c09dc0d 523 ttfonts-msg_0.3-1.dsc
+ 795b23917aee29796a7e0668cf23c190da66dc39 9513696 ttfonts-msg_0.3-1.tar.gz
+ 02c279518148f83915e34a3beae75a063f7e4983 9495728 ttfonts-msg_0.3-1_i386.deb
+Checksums-Sha256: 
+ e98ff64eba7188cccc535d27ed0b52b34afc1a56bd84030de47b550f72afb981 523 ttfonts-msg_0.3-1.dsc
+ 42fe89a7d316bde831af3bfc5985e38959fea5f5e4c959106abc75426a527ca4 9513696 ttfonts-msg_0.3-1.tar.gz
+ 825bcec3f9ab9540e158cf85a4ec59c4b9207b6bf5c813317ed873f2b7941cd8 9495728 ttfonts-msg_0.3-1_i386.deb
+Files: 
+ 272aaff240b2a20986e8adea320faf3c 523 x11 extra ttfonts-msg_0.3-1.dsc
+ fde18a62f08c4e766c52d2af948849aa 9513696 x11 extra ttfonts-msg_0.3-1.tar.gz
+ 1667e64d9351443abb8f91d5354cc67f 9495728 x11 extra ttfonts-msg_0.3-1_i386.deb

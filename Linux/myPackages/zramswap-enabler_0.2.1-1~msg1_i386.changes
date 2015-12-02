@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sat, 19 Nov 2011 13:39:37 -0500
+Source: zramswap-enabler
+Binary: zramswap-enabler
+Architecture: source all
+Version: 0.2.1-1~msg1
+Distribution: unstable
+Urgency: low
+Maintainer: Sergey "Shnatsel" Davidoff <shnatsel@gmail.com>
+Changed-By: Marcel S. Gongora <mrsanchez@uci.cu>
+Description: 
+ zramswap-enabler - Use RAM compression instead of swap
+Changes: 
+ zramswap-enabler (0.2.1-1~msg1) unstable; urgency=low
+ .
+   * Initial release.
+Checksums-Sha1: 
+ bc466e3d47089a2a70cb5a778b07f693b5897b56 876 zramswap-enabler_0.2.1-1~msg1.dsc
+ 2f1683be92c93f91988f1a4ef60cabe16a1eea16 1170 zramswap-enabler_0.2.1.orig.tar.gz
+ a11d910d574301b627bce0e73654a949916d1615 2782 zramswap-enabler_0.2.1-1~msg1.debian.tar.gz
+ 716edbccc3b5e96d57b4bb6d84f9042ab124cf88 3324 zramswap-enabler_0.2.1-1~msg1_all.deb
+Checksums-Sha256: 
+ d03a467bc008c9f13aa75c724d70add95d2d3bbe8bea1273b599364dbf9bc0e1 876 zramswap-enabler_0.2.1-1~msg1.dsc
+ 78a5adff86623d126321c32be0fbc6c8f5d234fdd7c28fd0c2fa726e7ff2b1d0 1170 zramswap-enabler_0.2.1.orig.tar.gz
+ bfbd6425a909c7a41ea04b59bb0db084d0554e0de5096e78652ca365034e8d29 2782 zramswap-enabler_0.2.1-1~msg1.debian.tar.gz
+ 335b846a0393ddbece71b5880d6dfe30213dfa666b3411fbc8cc2fb5ea5b1a9f 3324 zramswap-enabler_0.2.1-1~msg1_all.deb
+Files: 
+ 0c28b0d3c7531b60985c2643ddd2247c 876 x11 optional zramswap-enabler_0.2.1-1~msg1.dsc
+ 5d27f90c9ec79cff1b5804d6bc6f4bdd 1170 x11 optional zramswap-enabler_0.2.1.orig.tar.gz
+ 67289cbd62a536486f1ae39abb7e0148 2782 x11 optional zramswap-enabler_0.2.1-1~msg1.debian.tar.gz
+ e0e2b471e5a4be623cbe3394b6b08f3b 3324 x11 optional zramswap-enabler_0.2.1-1~msg1_all.deb
