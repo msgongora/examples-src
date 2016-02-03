@@ -1,20 +1,20 @@
 #!/usr/bin/perl 
 #############################################################################
-# Copyright (C) 2008-2011 Marcel S. Gongora <mrsanchez@uci.cu>           	#
-#																			#
-# This program is free software; you can redistribute it and/or modify		#
-# it under the terms of the GNU General Public License version 2 as			#
-# published by the Free Software Foundation.								#
+# Copyright (C) 2008-2011 Marcel S. Gongora <mrsanchez@uci.cu>              #
+#									    #
+# This program is free software; you can redistribute it and/or modify	    #
+# it under the terms of the GNU General Public License version 2 as	    #
+# published by the Free Software Foundation.				    #
 #                                                                           #
 # Depend:                                                                   #
-# 		perl (>=5.10.0)														#
-# 		libmail-imapclient-perl (>=3.07)                                    #   
-#		libio-socket-ssl-perl (>=1.02)                                      #
-#		libnet-dbus-perl (>=0.33.6)											#
-#		notification-daemon			                                        #
-#		libdigest-sha1-perl                                                 #
-#		libdigest-hmac-perl                                                 #
-#		                                                                    #
+# 		perl (>=5.10.0)						    #
+# 		libmail-imapclient-perl (>=3.07)                            #   
+#		libio-socket-ssl-perl (>=1.02)                              #
+#		libnet-dbus-perl (>=0.33.6)				    #
+#		notification-daemon			                    #
+#		libdigest-sha1-perl                                         #
+#		libdigest-hmac-perl                                         #
+#		                                                            #
 #############################################################################
 
 use strict;
