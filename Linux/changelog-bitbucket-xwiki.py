@@ -49,56 +49,18 @@ def getResponse(url):
     return res.read();
 "-------------------------------------------" 
 
-# def get_commits():
-#     leading_4_spaces = re.compile('^    ')
-#     lines = subprocess.check_output(
-#         ['git', '--git-dir=/Users/marcel/devel/commandscape/.git', 'log','--since=1529590985', '--until=1530559154','origin/develop'], stderr=subprocess.STDOUT
-#     ).split('\n')
-
-#     commits = []
-#     current_commit = {}
-
-#     def save_current_commit():
-#         title = current_commit['message'][0]
-#         message = current_commit['message'][1:]
-#         if message and message[0] == '':
-#             del message[0]
-#         current_commit['title'] = title
-#         current_commit['message'] = '\n'.join(message)
-#         commits.append(current_commit)
-
-#     for line in lines:
-#         if not line.startswith(' '):
-#             if line.startswith('commit '):
-#                 if current_commit:
-#                     save_current_commit()
-#                     current_commit = {}
-#                 current_commit['hash'] = line.split('commit ')[1]
-#             else:
-#                 try:
-#                     key, value = line.split(':', 1)
-#                     current_commit[key.lower()] = value.strip()
-#                 except ValueError:
-#                     pass
-#         else:
-#             current_commit.setdefault('message', []).append(leading_4_spaces.sub('', line))
-
-#     if current_commit:
-#         save_current_commit()
-#     return commits
-
 def get_prs(branchBefore, branchCurrent):
-    cmd1 = ['git', '--git-dir=/Users/marcel/devel/commandscape/.git', 'show', '--format="%ct"', '--merges', branchBefore]
+    cmd1 = ['git', '--git-dir=/Users/marcel/devel/repo-src/.git', 'show', '--format="%ct"', '--merges', branchBefore]
 
     lines1 = subprocess.check_output(cmd1, stderr=subprocess.STDOUT).split('\n')
     date1 = lines1[0]
 
-    cmd2 =['git', '--git-dir=/Users/marcel/devel/commandscape/.git', 'log', '-g', branchCurrent, '--format="%ct"']
+    cmd2 =['git', '--git-dir=/Users/marcel/devel/repo-src/.git', 'log', '-g', branchCurrent, '--format="%ct"']
     lines2 = subprocess.check_output(cmd2, stderr=subprocess.STDOUT).split('\n')
 
     date2 = lines2[0]
 
-    cmd = ['git', '--git-dir=/Users/marcel/devel/commandscape/.git', 'log', '--merges','--since={}'.format(date1), '--until={}'.format(date2), branchCurrent,
+    cmd = ['git', '--git-dir=/Users/marcel/devel/repo-src/.git', 'log', '--merges','--since={}'.format(date1), '--until={}'.format(date2), branchCurrent,
             '--format="%ci -#- %s -#- %h -#- %an"']
     process = subprocess.Popen(cmd, shell=False, stdout=subprocess.PIPE)
     output, errrors = process.communicate()
@@ -115,23 +77,17 @@ def get_prs(branchBefore, branchCurrent):
                 current_pr['commit'] = r['fromRef']['latestCommit']
                 current_pr['author'] = r['author']['user']['displayName'].encode('utf-8')
                 prs.append(dict(current_pr))
-            #     count+=1
-            # try:
-            #     print prs[count]
-            #     print count
-            # except IndexError:
-            #     pass
-    # print prs[1]
     return prs
 "-------------------------------------------" 
 
 
-limit=99
-start=0
-size=0
-flag=True
-branchBefore='origin/release/18.4'
+limit         = 99
+start         = 0
+size          = 0
+flag          = True
+branchBefore  = 'origin/release/18.4'
 branchCurrent = 'release/18.5'
+
 while flag:
     r = json.loads(getResponse(URL_PR_ALL.format(start,limit, branchCurrent)))
     # print r['isLastPage']
@@ -145,8 +101,8 @@ xwiki = "* {} [[view details>>{}]] - **[{}]**"
 # strnew = "date: {} - title: {} - commit: {}"
 # get prev release latest commit date: `preDate'  git show --format="%ct" origin/release/18.2 --merges
 #get  develop merged PR after `preDate' git log origin/develop --format="%ci %s -- %h" --merges|grep -E " to release/18.3"
-# first branch commit git --git-dir=$HOME/devel/commandscape/.git log -g release/18.3 --pretty=format:"%ct"|tail -n1
-# git --git-dir=$HOME/devel/commandscape/.git log origin/develop  --format="%ci %s -- %h" --merges --since=1529590985 --until=1530559154|grep "pull request"
+# first branch commit git --git-dir=$HOME/devel/repo-src/.git log -g release/18.3 --pretty=format:"%ct"|tail -n1
+# git --git-dir=$HOME/devel/repo-src/.git log origin/develop  --format="%ci %s -- %h" --merges --since=1529590985 --until=1530559154|grep "pull request"
 
 for current in values:
     print xwiki.format(current['title'], URL_PR_DET.format(current['id']), current['author']['user']['displayName'])
